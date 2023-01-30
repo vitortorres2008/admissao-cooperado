@@ -7,7 +7,8 @@
     "server": "json-server --watch src/db/data.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test:coverage": "ng test --code-coverage"
   },
   "private": true,
   "dependencies": {
