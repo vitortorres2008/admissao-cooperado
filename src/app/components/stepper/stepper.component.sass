@@ -1,0 +1,72 @@
+.Container
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+  min-height: 70px
+  margin-bottom: 30px
+
+  .Step
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    width: 140px
+    height: 100%
+    border-radius: 100px
+
+    &:first-child .Circle span::before
+      border: none
+
+    &:last-child .Circle span::after
+      border: none
+
+    .Circle
+      height: 100%
+      align-items: center
+      display: flex
+
+      span
+        position: relative
+        width: 18px
+        height: 18px
+        border: 2px solid var(--mute-secondary-color)
+        background-color: var(--mute-secondary-color)
+        border-radius: 100px
+
+        &::before
+          content: ''
+          position: absolute
+          right: 16px
+          top: 50%
+          transform: translateY(-50%)
+          width: 61px
+          width: 61px
+          border-top: 2px solid var(--mute-secondary-color)
+
+        &::after
+          content: ''
+          position: absolute
+          left: 16px
+          top: 50%
+          transform: translateY(-50%)
+          width: 61px
+          border-top: 2px solid var(--mute-secondary-color)
+
+    .Title
+      font-family: 'Open Sans'
+      font-style: normal
+      font-weight: 400
+      font-size: 14px
+      line-height: 19px
+      text-align: center1
+      color: var(--mute-secondary-color)
+      margin: 0
+
+    &.Active
+      .Title
+        color: var(--primary-color)
+
+      .Circle span
+        border-color: var(--primary-color)
+        background-color: transparent

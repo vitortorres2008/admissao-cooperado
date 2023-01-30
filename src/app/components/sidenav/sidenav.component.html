@@ -1,0 +1,30 @@
+<mat-drawer-container class="Container">
+  <mat-drawer mode="side" position="start" opened class="Drawer">
+    <ul>
+      <li><ion-icon class="Brand" name="globe-outline"></ion-icon></li>
+      <li>
+        <ion-icon
+          name="menu-outline"
+          title="Menu"
+          (click)="handleOpen()"
+        ></ion-icon>
+      </li>
+      <li><ion-icon name="search-outline" title="Pesquisa"></ion-icon></li>
+      <li><ion-icon name="star-outline" title="Favoritos"></ion-icon></li>
+      <li>
+        <ion-icon name="chatbox-ellipses-outline" title="Mensagens"></ion-icon>
+      </li>
+      <li>
+        <ion-icon name="settings-outline" title="Configurações"></ion-icon>
+      </li>
+      <li><ion-icon name="cash-outline" title="Banco"></ion-icon></li>
+    </ul>
+  </mat-drawer>
+  <mat-drawer-content class="DrawerContent">
+    <div class="DrawerContentHeader">
+      <app-header></app-header>
+    </div>
+    <div class="DrawerContentBody">
+      <ng-content></ng-content></div
+  ></mat-drawer-content>
+</mat-drawer-container>

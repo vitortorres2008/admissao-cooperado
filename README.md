@@ -1,27 +1,22 @@
 # TesteSofttek
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Projeto de teste para concorrer a uma vaga de desenvolvedor front-end pela empresa Softtek
+Esse projeto está usando a versão [Angular CLI](https://github.com/angular/angular-cli) 14.2.3.
 
-## Development server
+Os icones são usando substituindo o mais próximo possível do layout original já que as imagens não ficaram disponíveis no figma para exportação.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologias usadas
 
-## Code scaffolding
+- Json Server
+- Angular
+- typescript
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Rodando localmente
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Instale o nodejs
+- Instale o cli do angular, `npm install -g @angular/cli`
+- Clone o projeto no repositório:
+- Na pasta raiz, rode o comando `npm install`
+- Agora rode o comando `npm run server` em um terminal para subir o servidor da API
+- Depois abara outro terminal e rode `ng serve` para subir a aplicação em angular.
+- Acesso [http://localhost:4200](http://localhost:4200) para testar a aplicação.

@@ -1,0 +1,77 @@
+.Container
+  display: flex
+  width: 100%
+  min-height: 100vh
+
+  @media (max-width: 520px)
+    &
+      flex-direction: column
+
+  .Drawer
+    padding: 24px
+    background-color: var(--primary-color)
+    color: var(--secondary-color) !important
+
+    &.mat-drawer
+      position: relative
+
+    ul
+      margin: 0
+      padding: 0
+      list-style: none
+      overflow: auto
+
+      li
+        padding: 16px 0
+        font-size: 1.2rem
+        line-height: 1.2rem
+        display: flex
+        align-items: center
+        justify-content: center
+
+        &:first-child
+          padding-top: 0
+
+      @media (max-width: 520px)
+        &
+          display: flex
+          flex-direction: row
+          justify-content: space-between
+
+          li
+            margin: 0 8px
+
+            &:first-child
+              padding-top: 12px
+
+      .Brand
+        font-size: 3.6rem
+
+        @media (max-width: 520px)
+          &
+            margin-bottom: 0
+            margin-right: 24px
+
+      & ion-icon
+        font-size: 2.4rem
+
+.DrawerContent.mat-drawer-content
+  box-sizing: border-box
+  min-height: 100vh
+  margin: 0 !important
+  margin-left: 0 !important
+  flex-grow: 1
+  height: 100%
+  display: flex
+  flex-direction: column
+
+  .DrawerContentHeader
+    padding: 20px 24px
+
+  .DrawerContentBody
+    position: relative
+    background-color: var(--secondary-color)
+    height: 100%
+    flex-grow: 1
+    display: flex
+    flex-direction: column

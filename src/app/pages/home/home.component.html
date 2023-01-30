@@ -1,0 +1,101 @@
+<div class="Container">
+  <app-stepper></app-stepper>
+  <form>
+    <h1 class="Title">Informe o CPF do futuro cooperado(a)</h1>
+    <p class="Subtitle">
+      Se necessário, você poderá duplicar uma conta existente ou pausar e
+      retomar este cadastro futuramente. <br />
+      Digite apenas os números (sem pontos ou traços)
+    </p>
+
+    <div class="FormContainer">
+      <h4 class="Label">CPF</h4>
+      <form class="FormGroup" [formGroup]="form">
+        <div class="FormControl">
+          <input
+            [ngClass]="
+              (((this.isCpfNull() || this.isCpfInValid()) &&
+                !form.get('cpf')?.pristine) ||
+                error) &&
+              'Invalid'
+            "
+            name="cpf"
+            formControlName="cpf"
+            placeholder="000.000.000-00"
+            maxlength="14"
+            required
+            (focus)="this.error = undefined"
+            (input)="this.error = undefined; maskCpf(form.get('cpf')?.value)"
+          />
+          <p
+            *ngIf="
+              (this.isCpfNull() && !form.get('cpf')?.pristine) ||
+              error == 'required'
+            "
+            class="Error"
+          >
+            o campo CPF é obrigatório
+          </p>
+          <p
+            *ngIf="this.isCpfInValid() && !form.get('cpf')?.pristine"
+            class="Error"
+          >
+            Informe um CPF válido
+          </p>
+          <p *ngIf="error == 'notfound'" class="Error">
+            Não existe usuário cadastrado com esse CPF!
+          </p>
+          <p *ngIf="error == 'error'" class="Error">
+            Houve algum erro ao consultar!
+          </p>
+        </div>
+        <button
+          [ngClass]="this.persona ? 'Disabled' : ''"
+          class="FormSubmit"
+          (click)="onSubmit(form.get('cpf')?.value)"
+        >
+          <ion-icon
+            *ngIf="this.loading"
+            class="Loading"
+            name="refresh"
+            title="Carregando..."
+          ></ion-icon>
+          <span *ngIf="!this.loading">Consultar por CPF</span>
+        </button>
+      </form>
+    </div>
+  </form>
+  <div *ngIf="persona" class="Data">
+    <div class="DataHeader">
+      <h2 class="Title">Situação cadastral do CPF</h2>
+      <h3 class="Subtitle">Consulta na receita federal</h3>
+    </div>
+    <div class="DataBody">
+      <ion-icon name="person" class="Person"></ion-icon>
+      <div class="Content">
+        <h6 class="Label">Nome</h6>
+        <p class="Text">{{ persona.name }}</p>
+      </div>
+    </div>
+    <div class="DataBody">
+      <ion-icon
+        *ngIf="persona.status == 'irregular'"
+        name="close"
+        class="Unchecked"
+      ></ion-icon>
+      <ion-icon
+        *ngIf="persona.status == 'regular'"
+        name="checkmark-circle-outline"
+        class="Checked"
+      ></ion-icon>
+      <div class="Content">
+        <h6 class="Label">Situação do CPF</h6>
+        <p class="Text">{{ persona.status }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="Footer">
+  <button class="Button BtPrimary">Iníciar nova admissão</button>
+  <button class="Button">Dicas para abertura de conta</button>
+</div>

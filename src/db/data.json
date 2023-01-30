@@ -1,0 +1,22 @@
+{
+  "personas": [
+    {
+      "id": 1,
+      "cpf": "11122233344",
+      "name": "Mariane de Souza Oliveira",
+      "status": "regular"
+    },
+    {
+      "id": 2,
+      "cpf": "22152368177",
+      "name": "Diego Guimarães Martins",
+      "status": "irregular"
+    },
+    {
+      "id": 3,
+      "cpf": "36282148235",
+      "name": "Gabriela Oliveira",
+      "status": "regular"
+    }
+  ]
+}

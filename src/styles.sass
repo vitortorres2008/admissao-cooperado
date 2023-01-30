@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap')
+
+:root
+  --primary-color: #165C7D
+  --primary-dark-color: #012F44
+  --secondary-color: #E6EEF1
+  --tertiary-color: #A2BECC
+  --mute-color: #787878
+  --mute-intermediary-color: #889499
+  --mute-secondary-color: #C4CCCF
+  --white-color: #fff
+  --green-color: #58ec9d
+  --red-color: #FF0000
+  --danger-color: #C13018
+  --black-color: #101213
+  --success-color: #00C246
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+body
+  font-size: 16px
+
+.Loading
+  font-size: 20px
+  animation: rotate 1s infinite
+
+  @keyframes rotate
+    0%
+      transform: rotateZ(0deg)
+    100%
+      transform: rotateZ(360deg)
