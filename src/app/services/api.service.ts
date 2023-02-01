@@ -10,10 +10,6 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  getAll() {
-    return this.http.get(this.url + '/personas');
-  }
-
   getByCpf(cpf: string) {
     return this.http.get(this.url + `/personas?cpf=${cpf}`).pipe(
       map((res: any) => {

@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
     this.api.getByCpf(cpf).subscribe({
       next: (res) => {
         this.loading = false;
-        if (!res) {
+        if (!res || Object.keys(res).length === 0) {
           this.error = 'notfound';
           return;
         }

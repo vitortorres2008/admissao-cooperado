@@ -8,9 +8,8 @@ describe('SidenavComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SidenavComponent ]
-    })
-    .compileComponents();
+      declarations: [SidenavComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,14 @@ describe('SidenavComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Deve criar o componente', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Deve mudar o estado da propriedade open de false para true', () => {
+    component.opened = false;
+
+    component.handleOpen();
+    expect(component.opened).toEqual(true);
   });
 });
