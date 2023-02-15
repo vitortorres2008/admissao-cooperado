@@ -9,24 +9,25 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./home.component.sass'],
 })
 export class HomeComponent implements OnInit {
+
   form!: FormGroup;
-
   loading = false;
-
-  persona?: { id: string; name: string; cpf: string; status: string };
-
+  person?: { id: string; name: string; cpf: string; status: string };
   error?: string;
+  patternCpf =
+    '([0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2})';
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService) {
-    let patternCpf =
-      '([0-9]{2}[.]?[0-9]{3}[.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[.]?[0-9]{3}[.]?[0-9]{3}[-]?[0-9]{2})';
+  constructor(private formBuilder: FormBuilder, private api: ApiService) { }
 
-    this.form = this.formBuilder.group({
-      cpf: ['', [Validators.required, Validators.pattern(patternCpf)]],
-    });
+  ngOnInit() {
+    this.createForm();
   }
 
-  ngOnInit() {}
+  createForm() {
+    this.form = this.formBuilder.group({
+      cpf: [null, [Validators.required, Validators.pattern(this.patternCpf)]]
+    })
+  }
 
   onSubmit(cpf: string) {
     this.error = undefined;
@@ -52,7 +53,7 @@ export class HomeComponent implements OnInit {
           this.error = 'notfound';
           return;
         }
-        this.persona = res;
+        this.person = res;
       },
       error: (err) => {
         this.error = 'error';

@@ -2,20 +2,20 @@
   "personas": [
     {
       "id": 1,
-      "cpf": "11122233344",
-      "name": "Mariane de Souza Oliveira",
+      "cpf": "18816701714",
+      "name": "Vitor Torres Pereira Barbosa",
       "status": "regular"
     },
     {
       "id": 2,
-      "cpf": "22152368177",
-      "name": "Diego Guimarães Martins",
-      "status": "irregular"
+      "cpf": "01950221733",
+      "name": "Ivan Menezes Barbosa",
+      "status": "regular"
     },
     {
       "id": 3,
-      "cpf": "36282148235",
-      "name": "Gabriela Oliveira",
+      "cpf": "01020312345",
+      "name": "Marlon Oliveira",
       "status": "regular"
     }
   ]
